@@ -28,14 +28,14 @@ Third Pass:
 bubbleSort = (arr) => {
   arrLength = arr.length
 
-  for (let j = 0; j < arrLength; j++)
-    for (let i = 1; i < arrLength; i++) {
-      if(arr[i-1] > arr[i]){
-        let swap = arr[i]
-        arr[i] = arr[i-1]
-        arr[i-1] = swap
+  arr.map((parentA) => {
+    arr.map((a, key) => {
+      if(a>arr[key+1]){
+        arr[key] = arr[key+1]
+        arr[key+1] = a
       }
-    }
+    })
+  })
 
   return arr
 }
